@@ -35,7 +35,7 @@
 					</div>
 				<?php endforeach; ?>
 				<div id="wc-autoship-frequency-radio-no-autoship" class="wc-autoship-frequency-radio radio" style="display: none">
-					<label for="wc_autoship_frequency_<?php echo esc_html( $days ); ?>">
+					<label for="wc_autoship_frequency_no_autoship">
 						<input type="radio" name="wc_autoship_frequency" class="wc-autoship-frequency-input-radio"
 							id="wc_autoship_frequency_no_autoship" 
 							value="" /> 
