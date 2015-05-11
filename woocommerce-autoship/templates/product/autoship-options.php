@@ -10,6 +10,7 @@
 		$autoship_price = get_post_meta( $product->id, '_wc_autoship_price', true );
 		$autoship_min_frequency = get_post_meta( $product->id, '_wc_autoship_min_frequency', true );
 		$autoship_max_frequency = get_post_meta( $product->id, '_wc_autoship_max_frequency', true );
+		$autoship_default_frequency = get_post_meta( $product->id, '_wc_autoship_default_frequency', true );
 		
 		// Frequency options
 		$frequency_options = array(
@@ -33,12 +34,13 @@
 						<label for="wc_autoship_frequency_<?php echo esc_html( $days ); ?>">
 							<input type="radio" name="wc_autoship_frequency" class="wc-autoship-frequency-input-radio"
 								id="wc_autoship_frequency_<?php echo esc_html( $days ); ?>" 
-								value="<?php echo esc_html( $days ); ?>" /> 
+								value="<?php echo esc_html( $days ); ?>"
+								<?php echo checked( $days, $autoship_default_frequency ); ?> /> 
 							<?php echo esc_html( $name ), ' ', __( "(Every $days days)", 'wc-autoship' ); ?>
 						</label>
 					</div>
 				<?php endforeach; ?>
-				<div id="wc-autoship-frequency-radio-no-autoship" class="wc-autoship-frequency-radio radio" style="display: none">
+				<div id="wc-autoship-frequency-radio-no-autoship" class="wc-autoship-frequency-radio radio" <?php if ( empty( $autoship_default_frequency ) ) echo 'style="display: none"'; ?>>
 					<label for="wc_autoship_frequency_no_autoship">
 						<input type="radio" name="wc_autoship_frequency" class="wc-autoship-frequency-input-radio"
 							id="wc_autoship_frequency_no_autoship" 
