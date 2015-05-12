@@ -24,7 +24,7 @@
 		<fieldset>
 			<legend class="wc-autoship-add-to-autoship"><?php echo __( 'Add to Auto-Ship', 'wc-autoship' ); ?></legend>
 			<?php if ( ! empty( $autoship_price ) && $price != $autoship_price ): ?>
-				<h3 class="wc-autoship-price"><?php echo __( 'Auto-Ship price:', 'wc-autoship'); ?> <?php echo esc_html( $autoship_price ); ?></h3>
+				<h3 class="wc-autoship-price"><?php echo __( 'Auto-Ship price:', 'wc-autoship'); ?> <?php echo wc_price( $autoship_price ); ?></h3>
 			<?php endif; ?>
 			<p class="wc-autoship-select-frequency"><?php echo __( 'Select an Auto-Ship Frequency to add this item to auto-ship.', 'wc-autoship' ); ?></p>
 			<div class="wc-autoship-frequency wc-autoship-frequency-radio-options">
