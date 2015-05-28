@@ -30,6 +30,7 @@
 		$frequency_options = array(
 			'Weekly' => 7,
 			'Monthly' => 30,
+			'Bi-Monthly' => 60,
 			'Quarterly' => 90
 		);
 		
